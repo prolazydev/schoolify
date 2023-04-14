@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "name": "schoolify",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-vue": "^9.10.0",
+    "nuxt": "^3.4.0",
+    "nuxt-quasar-ui": "^1.6.0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.2",
+    "quasar": "^2.11.10"
+  }
+}
