@@ -33,4 +33,4 @@ The features may change depending on the circumstances of Development time and C
 - [ ] Create the TODOs :D
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE]() file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/prolazydev/schoolify/blob/main/LICENSE) file for details.
