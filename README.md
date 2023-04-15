@@ -38,9 +38,9 @@ More info about the project coming soon :D
 
 ### Front-end
 
-* [ ] Create a basic Wireframe <doing>
+* [ ] Create a basic Wireframe `Doing => ET: 2 days`
 
-* [ ] Implement the Styles, Colors and the Customization of the `look and feel` of the App
+* [ ] Implement the Styles, Colors and the Customization of the ***look and feel*** of the App
 * [ ] Implement the Admin Panel
 * [ ]
 
@@ -53,7 +53,7 @@ More info about the project coming soon :D
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/prolazydev/schoolify/blob/main/LICENSE) file for details.
 
-<style>
+<!-- <style>
 doing {
     color: LawnGreen;
     background: black;
@@ -78,4 +78,6 @@ done::after {
     content: 'Done'
 }
 
-</style>
+</style> 
+
+Apparently u can't do styles in github 🤷🏻‍♂️ -->
