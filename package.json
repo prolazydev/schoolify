@@ -1,0 +1,29 @@
+{
+  "name": "prolazydev_schoolify_readme",
+  "version": "0.0.1",
+  "description": "Github Actions for Schoolify's TODO tasks",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prep": "node readme/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prolazydev/schoolify"
+  },
+  "keywords": [
+    "prolazydev"
+  ],
+  "author": "Flamur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prolazydev/schoolify/issues"
+  },
+  "homepage": "https://github.com/prolazydev/schoolify#readme",
+  "dependencies": {
+    "@notionhq/client": "^2.2.4",
+    "dotenv": "^16.0.3",
+    "mustache": "^4.2.0"
+  }
+}

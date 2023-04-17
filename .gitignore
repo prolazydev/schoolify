@@ -52,6 +52,3 @@ package-lock.json
 .output
 dist
 .DS_Store
-
-# readme templating
-*.mustache

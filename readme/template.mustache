@@ -1,0 +1,86 @@
+# 👨🏻‍🎓 Schoolify 👩🏻‍🏫
+
+---
+
+Schoolify is a web application for managing schools. The application provides a platform for administrators, teachers, and students to interact with each other and carry out their tasks effectively.
+
+More info about the project coming soon :D
+
+## Tech Stack 🧩
+
+### Frontend
+
+[![Nuxt][NuxtLogo]][NuxtURL] [![Quasar][QuasarLogo]][QuasarURL]
+
+  and more to specify 💻
+
+### Backend
+
+[![Bun][BunLogo]][BunURL]
+
+## Features
+
+* User Authentication and Authorization 🔐 👩🏻‍💻
+* Dashboard for Administrators to manage students, teachers, classes, and courses 📊
+* Dashboard for Teachers to manage students and assignments 📊
+* Dashboard for Students to view their schedules, assignments, and grades 📊
+* Messaging system for Administrators, teachers, and students to communicate with each other 💬
+* Automatic email notifications for important events such as upcoming assignments or parent-teacher meetings 💌
+* Reporting and analytics for Administrators to monitor student performance and identify areas for improvement 📄📈📉
+
+### Disclaimer
+
+> The features may change or not be applied to the project depending on the circumstances of Development time, Complexity and other design choices for the project 🐱‍👤
+
+## TASKS 📓📎🖇
+
+### `⚫ TODO`
+
+{{! IF }}
+{{ #areStartedTasks }}
+{{ #notStartedTasks }}
+* [{{ title }}]({{ url }}) <details><summary>`Details`</summary> {{ description }} </details>  {{#type}}`{{.}}` {{/type}} `{{ ETA }}`
+{{ /notStartedTasks }}
+{{ /areStartedTasks }}
+{{! ELSE }}
+{{ ^areStartedTasks }}
+`No tasks for the moment :>`
+{{ /areStartedTasks }}
+
+### `🔵 In progress`
+
+{{! IF }}
+{{ #areProgressTasks }}
+{{ #inProgressTasks }}
+* [{{ title }}]({{ url }}) <details><summary>`Details`</summary> {{ description }} </details> {{#type}}`{{.}}` {{/type}}  `{{ ETA }}`
+{{ /inProgressTasks }}
+{{ /areProgressTasks }}
+{{! ELSE }}
+{{ ^areProgressTasks }}
+`No tasks for the moment :>`
+{{ /areProgressTasks }}
+
+### `🟢 Completed`
+
+{{! IF }}
+{{ #areCompletedTasks }}
+{{ #completedTasks }}
+* [{{ title }}]({{ url }}) <details><summary>`Details`</summary> {{ description }} </details>  {{#type}}`{{.}}` {{/type}} `{{ ETA }}`
+{{ /completedTasks }}
+{{ /areCompletedTasks }}
+{{! ELSE }}
+{{ ^areCompletedTasks }}
+`No tasks for the moment :>`
+{{ /areCompletedTasks }}
+
+
+<!-- MARKDOWN ASSETS -->
+
+[NuxtLogo]: https://img.shields.io/badge/nuxt.js-00db7f?style=for-the-badge&logo=nuxt.js&logoColor=000
+[NuxtURL]: https://nuxt.com/
+
+[QuasarLogo]: https://img.shields.io/badge/Quasar-1d1d1d?style=for-the-badge&logo=quasar&logoColor=1976d2
+[QuasarURL]: https://quasar.dev/
+
+[BunLogo]: https://img.shields.io/badge/Bun%20V0.5.9-282a35?style=for-the-badge&logo=bun&logoColor=fff
+[BunURL]: https://bun.sh/
