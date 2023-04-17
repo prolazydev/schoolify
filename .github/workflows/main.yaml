@@ -37,7 +37,8 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "flamur.biz@hotmail.com"
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+            echo "Pushing changes..."
+            git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
             git push
           else
             echo "No changes to commit"
