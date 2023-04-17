@@ -29,7 +29,7 @@ jobs:
       - name: Generate README 
         run: npm run prep
       - name: Commit and Push new README.md to the repo
-        uses: mikeal/publish-to-github-action@master
+        uses: mikeal/publish-to-github-action@main
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
