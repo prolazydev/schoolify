@@ -1,10 +1,12 @@
 import { Client } from '@notionhq/client';
 import dotenv from 'dotenv';
+import fastEqual from 'fast-deep-equal';
 import fs from 'fs';
 import Mustache from 'mustache';
-
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+import currentData from './data.json' assert { type: 'json' };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -14,13 +16,10 @@ dotenv.config({ path: path.resolve(__dirname, 'local.env') });
 try {
     const notion = new Client({ auth: process.env.NOTION_KEY });
     const database_id = process.env.NOTION_DB_ID;
-
     
     async function main() {
         const response = await notion.databases.query({ database_id });
         const data = [];
-
-        // createJSONFile(response);
 
         for (let i = 0; i < response.results.length; i++) {
             const task = response.results[ i ];
@@ -33,22 +32,29 @@ try {
             tempTask.status = task.properties.Status.status.name;
             tempTask.url = task.url;
             tempTask.last_edited_at = task.last_edited_time;
-            // TODO: Add important filtering
-            // tempTask.important = task.important;
+            tempTask.isImportant = isImportant(task);
             
             data.push(tempTask);
         }
+        if (!currentData || Object.keys(currentData).length === 0) {
+            fs.writeFile('readme/data.json', JSON.stringify(data), err => {
+                if (err) 
+                    return console.error(err);
+                
+                console.log('Data written to file successfully');
+            });
+        } else if (fastEqual(currentData, data)) 
+            return console.log('No updates needed');
 
-        const notStartedTasks = data.filter(task => task.status === 'Not started');
-        const inProgressTasks = data.filter(task => task.status === 'In progress');
-        const completedTasks = data.filter(task => task.status === 'Complete');
+        const notStartedTasks = data.filter(task => task.status === 'Not started').sort((a, b) => b.isImportant - a.isImportant);
+        const inProgressTasks = data.filter(task => task.status === 'In progress').sort((a, b) => b.isImportant - a.isImportant);
+        const completedTasks = data.filter(task => task.status === 'Complete').sort((a, b) => b.isImportant - a.isImportant);
 
         const template = fs.readFileSync(path.resolve(__dirname, 'template.mustache'), 'utf8');
         const areStartedTasks = (notStartedTasks.length) ? true : false;
         const areProgressTasks = (inProgressTasks.length) ? true : false;
         const areCompletedTasks = (completedTasks.length) ? true : false;
 
-        // Render the template with the split data arrays
         const rendered = Mustache.render(template, {
             areStartedTasks,
             areProgressTasks,
@@ -58,7 +64,7 @@ try {
             completedTasks,
         });
 
-        // Write the rendered README file to disk
+        // Write the rendered README file
         fs.writeFileSync('README.md', rendered);
     }
     await main();
@@ -82,14 +88,12 @@ function getWholeTaskTypes(task) {
     return types;
 }
 
+function getWholeTagTypes(task) {
+    let tags = [];
+    for (const type of task.properties.Task.multi_select)
+        tags.push(type.anme)
+}
 
-// async function createJSONFile(data) {
-//   // Convert the JSON object to a string with two-space indentation
-//   const jsonData = JSON.stringify(data, null, 2);
-  
-//   // Write the JSON string to a file named 'data.json'
-//   fs.writeFile('data.json', jsonData, (err) => {
-//     if (err) throw err;
-//     console.log('The file has been saved!');
-//   });
-// }
+function isImportant(task) {
+    return task.properties.Tags.multi_select.includes('Important');
+}

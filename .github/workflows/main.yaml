@@ -32,25 +32,20 @@ jobs:
         run: npm install
       - name: Generate README 
         run: npm run prep
-      - name: GIT Commit
+      - name: GIT Commit and Push changes
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "flamur.biz@hotmail.com"
-          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-          git push
-      # - name: Stage changes
-      #   uses: actions/github-script@v4
-      #   with:
-      #     script: |
-      #       git add README.md
-      # - name: Commit changes
-      #   uses: actions/github-script@v4
-      #   with:
-      #     script: |
-      #       git commit -m "Update README"
-      # - name: Push changes
-      #   uses: actions/github-script@v4
-      #   with:
-      #     script: |
-      #       git push
-        
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+        # run: |
+        #   git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        #   git config --global user.email "flamur.biz@hotmail.com"
+        #   git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        #   git push
+        # git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        # git push
