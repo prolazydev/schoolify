@@ -2,8 +2,9 @@ name: README Build
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   schedule:
     - cron: "5 8 * * 0" # Every Sunday
 
