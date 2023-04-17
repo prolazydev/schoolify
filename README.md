@@ -47,7 +47,6 @@ More info about the project coming soon :D
 
 `No tasks for the moment :>`
 
-
 <!-- MARKDOWN ASSETS -->
 
 [NuxtLogo]: https://img.shields.io/badge/nuxt.js-00db7f?style=for-the-badge&logo=nuxt.js&logoColor=000
