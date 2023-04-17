@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-      CI_COMMIT_AUTHOR: Continuous Integration
+      CI_COMMIT_AUTHOR: Flamur
 
     steps:
       - name: Checkout current repository to Master branch
