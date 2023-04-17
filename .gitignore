@@ -1,5 +1,6 @@
 # dependencies
 */node_modules/*
+/node_modules/* 
 /.pnp
 .pnp.js
 # modules
@@ -28,6 +29,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 # vercel
 .vercel
@@ -48,6 +50,8 @@ package-lock.json
 .nitro
 .cache
 .output
-.env
 dist
 .DS_Store
+
+# readme templating
+*.mustache
