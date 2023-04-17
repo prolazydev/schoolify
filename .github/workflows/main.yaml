@@ -19,22 +19,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-          before-build-commands: |
-            sudo apt-get update
-            sudo apt-get install -y git
-      - name: Cache dependencies and build outputs to improve workflow speed
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
+      # - name: Cache dependencies and build outputs to improve workflow speed
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: npm install
-      - name: Configure Git
-        uses: actions/github-script@v4
-        with:
-          script: |
-            git config user.name "Flamur Fazliu"
-            git config user.email "flamur.biz@hotmail.com"
+      # - name: Configure Git
+      #   uses: actions/github-script@v6
+      #   with:
+      #     script: |
+      #       git config user.name "Flamur Fazliu"
+      #       git config user.email "flamur.biz@hotmail.com"
       - name: Generate README 
         run: npm run prep
       - name: Stage changes
