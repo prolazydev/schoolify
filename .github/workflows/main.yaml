@@ -6,13 +6,13 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: "5 8 * * 0" # Every Sunday
+    - cron: "0 * * * *" # Every Hour
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-      CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+      CI_COMMIT_MESSAGE: Updated README
       CI_COMMIT_AUTHOR: Flamur
 
     steps:
