@@ -15,12 +15,12 @@ try {
     const notion = new Client({ auth: process.env.NOTION_KEY });
     const database_id = process.env.NOTION_DB_ID;
 
+    
     async function main() {
         const response = await notion.databases.query({ database_id });
+        const data = [];
 
         // createJSONFile(response);
-
-        const data = [];
 
         for (let i = 0; i < response.results.length; i++) {
             const task = response.results[ i ];
@@ -43,14 +43,11 @@ try {
         const inProgressTasks = data.filter(task => task.status === 'In progress');
         const completedTasks = data.filter(task => task.status === 'Complete');
 
-        // console.table(notStartedTasks);
-        // console.table(inProgressTasks);
-        // console.table(completeTasks);
-
         const template = fs.readFileSync(path.resolve(__dirname, 'template.mustache'), 'utf8');
         const areStartedTasks = (notStartedTasks.length) ? true : false;
         const areProgressTasks = (inProgressTasks.length) ? true : false;
         const areCompletedTasks = (completedTasks.length) ? true : false;
+
         // Render the template with the split data arrays
         const rendered = Mustache.render(template, {
             areStartedTasks,
@@ -78,12 +75,6 @@ function getWholeDescription(task) {
 }
 
 function getWholeTaskTypes(task) {
-    // let types = "";
-    // for (const type of task.properties.Type.multi_select) 
-    //     types += `${type.name} `;
-    
-    // return types.trim();
-
     let types = [];
     for (const type of task.properties.Type.multi_select) 
         types.push(type.name);
@@ -92,13 +83,13 @@ function getWholeTaskTypes(task) {
 }
 
 
-async function createJSONFile(data) {
-  // Convert the JSON object to a string with two-space indentation
-  const jsonData = JSON.stringify(data, null, 2);
+// async function createJSONFile(data) {
+//   // Convert the JSON object to a string with two-space indentation
+//   const jsonData = JSON.stringify(data, null, 2);
   
-  // Write the JSON string to a file named 'data.json'
-  fs.writeFile('data.json', jsonData, (err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
-  });
-}
+//   // Write the JSON string to a file named 'data.json'
+//   fs.writeFile('data.json', jsonData, (err) => {
+//     if (err) throw err;
+//     console.log('The file has been saved!');
+//   });
+// }
