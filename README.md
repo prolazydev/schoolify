@@ -15,13 +15,13 @@ More info about the project coming soon :D
 
   and more to specify 💻
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Top</a>)</p>
 
 ### Backend
 
 [![Bun][BunLogo]][BunURL]
 
-<p align="right"><a href="#readme-top">go top</a></p>
+<p align="right"><a href="#readme-top">Top</a></p>
 
 ## Features
 
@@ -33,13 +33,13 @@ More info about the project coming soon :D
 * Automatic email notifications for important events such as upcoming assignments or parent-teacher meetings 💌
 * Reporting and analytics for Administrators to monitor student performance and identify areas for improvement 📄📈📉
 
-<p align="right"><a href="#readme-top">go top</a></p>
+<p align="right"><a href="#readme-top">Top</a></p>
 
 ### Disclaimer
 
 > The features may change or not be applied to the project depending on the circumstances of Development time, Complexity and other design choices for the project 🐱‍👤
 
-<p align="right"><a href="#readme-top">go top</a></p>
+<p align="right"><a href="#readme-top">Top</a></p>
 
 ## TASKS 📓📎🖇
 
@@ -58,7 +58,7 @@ More info about the project coming soon :D
 
 `No tasks for the moment :>`
 
-<p align="right"><a href="#readme-top">go top</a></p>
+<p align="right"><a href="#readme-top">Top</a></p>
 
 <!-- MARKDOWN ASSETS -->
 
