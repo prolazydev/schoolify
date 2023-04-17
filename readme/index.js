@@ -46,9 +46,9 @@ try {
         } else if (fastEqual(currentData, data)) 
             return console.log('No updates needed');
 
-        const notStartedTasks = data.filter(task => task.status === 'Not started').sort((a, b) => b.isImportant - a.isImportant);
-        const inProgressTasks = data.filter(task => task.status === 'In progress').sort((a, b) => b.isImportant - a.isImportant);
-        const completedTasks = data.filter(task => task.status === 'Complete').sort((a, b) => b.isImportant - a.isImportant);
+        const notStartedTasks = data.filter(task => task.status === 'Not started').sort((a, b) => b.isImportant - a.isImportant).slice(0, 3);
+        const inProgressTasks = data.filter(task => task.status === 'In progress').sort((a, b) => b.isImportant - a.isImportant).slice(0, 3);
+        const completedTasks = data.filter(task => task.status === 'Complete').sort((a, b) => b.isImportant - a.isImportant).slice(0, 3);
 
         const template = fs.readFileSync(path.resolve(__dirname, 'template.mustache'), 'utf8');
         const areStartedTasks = (notStartedTasks.length) ? true : false;
