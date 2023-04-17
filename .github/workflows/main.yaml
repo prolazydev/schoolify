@@ -26,8 +26,29 @@ jobs:
           key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: npm install
+      - name: Configure Git
+        uses: actions/github-script@v6
+        with:
+          script: |
+            git config user.name "Flamur Fazliu"
+            git config user.email "flamur.biz@hotmail.com"
       - name: Generate README 
         run: npm run prep
+      - name: Stage changes
+        uses: actions/github-script@v4
+        with:
+          script: |
+            git add README.md
+      - name: Commit changes
+        uses: actions/github-script@v4
+        with:
+          script: |
+            git commit -m "Update README"
+      - name: Push changes
+        uses: actions/github-script@v4
+        with:
+          script: |
+            git push
       - name: Commit and Push new README.md to the repo
         uses: mikeal/publish-to-github-action@main
         env: 
