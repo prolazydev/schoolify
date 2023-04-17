@@ -15,7 +15,7 @@ More info about the project coming soon :D
 
   and more to specify 💻
 
-<p align="right">(<a href="#readme-top">Top</a>)</p>
+<p align="right"><a href="#readme-top">Top</a></p>
 
 ### Backend
 
@@ -58,6 +58,8 @@ More info about the project coming soon :D
 
 `No tasks for the moment :>`
 
+[All Tasks][SchoolifySiteURL]
+
 <p align="right"><a href="#readme-top">Top</a></p>
 
 <!-- MARKDOWN ASSETS -->
@@ -70,3 +72,5 @@ More info about the project coming soon :D
 
 [BunLogo]: https://img.shields.io/badge/Bun%20V0.5.9-282a35?style=for-the-badge&logo=bun&logoColor=fff
 [BunURL]: https://bun.sh/
+
+[SchoolifySiteURL]: https://schoolify.super.site/
