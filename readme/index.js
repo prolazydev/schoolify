@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Get the directory name of the current file
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, 'local.env') });
 
 try {
     const notion = new Client({ auth: process.env.NOTION_KEY });
