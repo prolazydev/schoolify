@@ -1,5 +1,6 @@
-<a name="readme-top"></a>
-# 👨🏻‍🎓 Schoolify 👩🏻‍🏫
+# 👨🏻‍🎓 Schoolify 👩🏻‍🏫 <a name="readme-top"></a>
+
+[![github release version](https://img.shields.io/github/v/release/prolazydev/schoolify.svg?style=for-the-badge)](https://github.com/prolazydev/schoolify/releases/latest) [![license](https://img.shields.io/github/license/prolazydev/schoolify.svg?style=for-the-badge)](https://github.com/prolazydev/schoolify/blob/main/LICENSE) [![code with hearth by NHN Cloud](https://img.shields.io/badge/%3C%2F%3E%20with%20%20cooless%20%F0%9F%98%8E%20by-prolazydev-00FA9A.svg?style=for-the-badge)](https://github.com/nhn)
 
 ---
 
@@ -11,9 +12,9 @@ More info about the project coming soon :D
 
 ### Frontend
 
-[![Nuxt][NuxtLogo]][NuxtURL] [![Quasar][QuasarLogo]][QuasarURL]
+[![Nuxt][NuxtLogo]][NuxtURL] [![Tailwind][TailwindLogo]][TailwindURL]
 
-  and more to specify 💻
+`and more to specify 💻`
 
 <p align="right"><a href="#readme-top">Top</a></p>
 
@@ -70,7 +71,10 @@ More info about the project coming soon :D
 [QuasarLogo]: https://img.shields.io/badge/Quasar-1d1d1d?style=for-the-badge&logo=quasar&logoColor=1976d2
 [QuasarURL]: https://quasar.dev/
 
-[BunLogo]: https://img.shields.io/badge/Bun%20V0.5.9-282a35?style=for-the-badge&logo=bun&logoColor=fff
+[BunLogo]: https://img.shields.io/badge/Bun%20V0.6.0-282a35?style=for-the-badge&logo=bun&logoColor=fff
 [BunURL]: https://bun.sh/
+
+[TailwindLogo]: https://img.shields.io/badge/Tailwind-172554?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8
+[TailwindURL]: https://tailwindcss.com/
 
 [SchoolifySiteURL]: https://schoolify.super.site/
