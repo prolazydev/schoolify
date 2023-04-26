@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import EmptyLayout from '../EmptyLayout.vue';
+import EmptyLayout from '../DefaultLayout.vue';
 
 const layout = shallowRef();
 const route = useRoute();

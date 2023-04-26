@@ -18,7 +18,6 @@
         </div>
         <div class="flex flex-col gap-3 justify-center absolute bottom-[10%] left-2/4 translate-x-[-50%] max-sm:bottom-[15%]">
             <router-link to="/home" class="text-center p-3 rounded-md hover:underline bg-emerald-200 text-emerald-700">Let's start from the beggining, shall we?</router-link>
-            <router-link to="/auth/login" class="text-center p-3 rounded-md hover:underline bg-emerald-200 text-emerald-700">Let's start from the beggining, shall we?</router-link>
         </div>
     </div> 
 </template>

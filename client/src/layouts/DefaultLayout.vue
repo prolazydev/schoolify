@@ -6,7 +6,7 @@
                     <div @click="scrollThrough" class="px-3 py-2 rounded-lg text-2xl cursor-pointer transition-colors select-none hover:bg-slate-200 active:bg-violet-200">
                         {{ logo }}
                     </div>
-                    <h1 class="cursor-default text-3xl font-bold">Schoolify</h1>
+                    <router-link to="/home" class="cursor-pointer text-3xl font-bold hover:underline text-black">Schoolify</router-link>
                 </div>
                 <div>
                     

@@ -5,6 +5,7 @@ import fs from 'fs';
 import Mustache from 'mustache';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { version } from '../client/package.json'
 
 import currentData from './data.json' assert { type: 'json' };
 
@@ -62,6 +63,7 @@ try {
             notStartedTasks,
             inProgressTasks,
             completedTasks,
+            version
         });
 
         // Write the rendered README file

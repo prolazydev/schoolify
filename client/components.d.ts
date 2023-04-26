@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ButtonComponent: typeof import('./src/components/ButtonComponent.vue')['default']
+    DefaultLayout: typeof import('./src/layouts/DefaultLayout.vue')['default']
     EmptyLayout: typeof import('./src/layouts/EmptyLayout.vue')['default']
     MainLayout: typeof import('./src/layouts/default/MainLayout.vue')['default']
     Mbtn: typeof import('./src/components/Mbtn.vue')['default']
