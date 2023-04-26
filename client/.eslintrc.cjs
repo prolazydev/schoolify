@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution',);
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
     root: true,
@@ -11,37 +11,32 @@ module.exports = {
         'plugin:vue/vue3-essential',
         'eslint:recommended',
         '@vue/eslint-config-typescript',
+        // './.eslintrc-auto-import.json',
     ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
     rules: {
-        'no-console': 'warn',
-        'comma-dangle': [ 'warn', 'always', ],
+        'no-console': 'off',
+        'no-debugger': 'off',
+        'comma-dangle': [ 'warn', {
+            "arrays": "always",
+            "objects": "always",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never",
+        },],
         'no-unused-vars': 'warn',
+        'no-undef': 'off',
+        'vue/multi-word-component-names': 'off',
         // enforce 4 spaces per tab
-        indent: [ 'warn', 4, ],
+        'indent': [ 'warn', 4, ],
         'array-bracket-spacing': [ 'error', 'always', { objectsInArrays: false, },],
         '@typescript-eslint/no-unused-vars': 'warn',
         // allow tabs for indentation
         'vue/html-indent': [ 'error', 4, ],
-        semi: [ 'error', 'always', ],
-        'vue/attributes-order': [ 'error', {
-            order: [
-                'EVENTS',
-                'DEFINITION',
-                'OTHER_DIRECTIVES',
-                'CONTENT',
-                'OTHER_ATTR',
-                'LIST_RENDERING',
-                'CONDITIONALS',
-                'TWO_WAY_BINDING',
-                'RENDER_MODIFIERS',
-                [ 'UNIQUE', 'SLOT', ],
-                'GLOBAL',
-            ],
-            alphabetical: false,
-        },],
+        semi: [ 'warn', 'always', ],
+        'vue/attributes-order': 'off',
     },
 };

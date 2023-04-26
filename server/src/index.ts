@@ -1,17 +1,21 @@
-import { swagger } from '@elysiajs/swagger';
-import { Elysia } from 'elysia';
+import { Elysia, ws } from 'elysia';
+import { cors } from '@elysiajs/cors';
 import { userRoutes } from '../routes';
 
-const server = new Elysia();
-server.use(swagger());
+const app = new Elysia();
+app.use(cors());
+app.use(ws());
 
-server.group('/api', (e) => {
+app.group('/api', (e) => {
     e.use(userRoutes);
-    
+
     return e;
-})
+});
 
-server.get('/', () => 'hi')
-server.listen(3000);
+app.get('/', () => 'hi');
 
-console.log(`🦊 Elysia is running at ${server.server?.hostname}:${server.server?.port}`)
+app.listen(3000);
+
+console.log(`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`);
+
+export type App = typeof app;

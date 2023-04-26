@@ -1,5 +1,8 @@
 {
-    "files": [],
+    "files": [
+        "auto-imports.d.ts",
+        "components.d.ts"
+    ],
     "references": [
         {
             "path": "./tsconfig.node.json"
@@ -11,7 +14,33 @@
             "path": "./tsconfig.vitest.json"
         }
     ],
+    "types": [
+        "vite/client",
+        "vue-i18n",
+        "node"
+    ],
     "compilerOptions": {
-        "verbatimModuleSyntax": true
-    }
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "**/*.ts",
+        "**/*.d.ts",
+        "**/*.vue"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
 }

@@ -2,12 +2,14 @@ import Elysia from "elysia";
 
 const userRoutes = (app: Elysia) => {
     app.group('/user', u => {
-        u.get('/', res => {
+        u.get('', res => {
             return res;
-        })
+        });
+        
         u.get('/test', () => {
             return 'test';
-        })
+        });
+
         return u;
     });
 
