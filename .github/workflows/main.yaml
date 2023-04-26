@@ -27,7 +27,6 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
-
       - name: Install dependencies
         run: npm install
       - name: Generate README 
@@ -43,10 +42,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-        # run: |
-        #   git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-        #   git config --global user.email "flamur.biz@hotmail.com"
-        #   git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-        #   git push
-        # git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-        # git push
