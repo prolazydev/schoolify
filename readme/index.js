@@ -5,7 +5,7 @@ import fs from 'fs';
 import Mustache from 'mustache';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { version } from '../client/package.json'
+import pkg from '../client/package.json' assert { type: 'json' };
 
 import currentData from './data.json' assert { type: 'json' };
 
@@ -13,6 +13,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Get the directory name of the current file
 dotenv.config({ path: path.resolve(__dirname, 'local.env') });
+
+console.log(pkg.version);
 
 try {
     const notion = new Client({ auth: process.env.NOTION_KEY });
@@ -63,7 +65,7 @@ try {
             notStartedTasks,
             inProgressTasks,
             completedTasks,
-            version
+            // version
         });
 
         // Write the rendered README file
